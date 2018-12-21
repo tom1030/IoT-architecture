@@ -8,8 +8,7 @@
       c. Static functions in the file
         
     Volatile
-      Tell the compiler should not optimize the data with volatile word and read the value from actual memory,
-      not from register afer optimization.
+      Tell the compiler should not optimize the data with volatile word and read the value from actual memory,not from register afer optimization.
       Const value and pointer can be volatile.
       
     Const
@@ -19,9 +18,10 @@
       Extern value extern "C" to compile and link the code with C rules.
       
     __inline
-    
+      
     assert
       Assert is Macro not function, terminate the function if the condition is false.
+      
     sizeof
       For array, return the size of entire array data.
       For pointer, return size of only pointer.
@@ -36,7 +36,25 @@
     Dynamic area
       Heap -- Malloc/New
       Stack
+  1.2 Compile
+    Preprocess
+      a. #define,#undef
+      b. #if,#ifdef,#ifudef,#else,#endif
+      c. #include header file
+      d. other # symbol
       
+    Compile
+      1. Syntax and semantics parsing
+      2. Optimization
+      
+    Assembly
+      Generate target machine language.
+      
+    Linking
+      Link symbols from different files or libraries.
+      -- Static linking
+      -- Dynamic linking
+  
 2 Algorithm
 
 3 Data Structure
