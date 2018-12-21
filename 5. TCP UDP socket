@@ -1,3 +1,16 @@
-1 Basic concept
-2 Socket function
-3 TCP UDP behavior
+1 TCP
+  1.1 Connection establishment --
+    a. Client send SYN with random A as sequence number to server;
+    b. Server replies SYN-ACK with ack number A+1 and random B as sequence number to client;
+    c. Clinet replies ACK with ack number B+1;
+    
+  1.2 Connection termination
+    a. Initiator send FIN to receiver, initiator enter FIN_WAIT_1 status and receiver enter CLOSE_WAIT status;
+    b. Receiver replies ACK to initiator,initiator enter FIN_WAIT_2 status;
+    c. Receiver send FIN to Initiator, receiver enter LAST_ACK status;
+    d. Initiator replies ACK to receiver, initiator enter TIME_WAIT status and receiver enter CLOSED status, initiator enter CLOSED status after 2MSL;
+  
+  1.3 Reliable transmission
+    
+  1.4 Flow control
+  1.5 Congestion control
