@@ -1,3 +1,5 @@
 1 MQTT
   1.1 Handshake
   1.2 Data frame
+2 WebSocket
+3 CoAP
