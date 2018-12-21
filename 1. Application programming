@@ -15,7 +15,8 @@
       Read-Ony value and store in RO data section.
       
     - Extern
-      Extern value extern "C" to compile and link the code with C rules.
+      Extern value
+      Extern "C" to compile and link the code with C rules.
       
     - __inline
       
