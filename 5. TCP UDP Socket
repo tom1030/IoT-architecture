@@ -8,18 +8,26 @@
     a. Initiator send FIN to receiver, initiator enter FIN_WAIT_1 status and receiver enter CLOSE_WAIT status;
     b. Receiver replies ACK to initiator,initiator enter FIN_WAIT_2 status;
     c. Receiver send FIN to Initiator, receiver enter LAST_ACK status;
-    d. Initiator replies ACK to receiver, initiator enter TIME_WAIT status and receiver enter CLOSED status, initiator enter CLOSED status after 2MSL;
+    d. Initiator replies ACK to receiver, initiator enter TIME_WAIT status and receiver enter CLOSED status,initiator enter CLOSED status after 2MSL;
   
-  1.3 Reliable transmission 可靠性传输
+  1.3 Reliable transmission
     TCP uses a sequence number to identify each byte of data.
     
   1.4 Retransmission
-    - Dupack-based retransmission 快速重传
+    - Dupack-based retransmission
       Recevier send ACK to sender with same packet number 3 times if one of pakcet lost.
-    - Timeout-based retransmission 超时重传
+    - Timeout-based retransmission
       Sender waits a timeout and transmits that packet again if don't receive ACK.
       
   1.4 Flow control
-    TCP uses a sliding window flow control protocol, the receiver 
+    TCP uses a sliding window flow control protocol, the receiver specifies in the receive window field the amount of additionally received data (in bytes) that it is willing to buffer for the connection.
+    The sending host can send only up to that amount of data before it must wait for an acknowledgement and window update from the receiving host.
     
   1.5 Congestion control
+    - Slow start
+    - Congestion avoidance
+    - Fast retransmit
+    - Fast recovery
+2 UDP
+
+3 Socket
