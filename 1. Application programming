@@ -1,4 +1,46 @@
 1 C/C++ programming
+  1.1 Key words
+    Static
+      a. Static local variables in function
+        Store in RW data section if be initialized, store in BSS section if not be initialized.
+      b. Static gloable varibales in file
+        Store in RW data section if be initialized, store in BSS section if not be initialized.
+      c. Static functions in the file
+        
+    Volatile
+      Tell the compiler should not optimize the data with volatile word and read the value from actual memory,
+      not from register afer optimization.
+      Const value and pointer can be volatile.
+      
+    Const
+      Read-Ony value and store in RO data section.
+      
+    Extern
+      Extern value extern "C" to compile and link the code with C rules.
+      
+    __inline
+    
+    assert
+      Assert is Macro not function, terminate the function if the condition is false.
+    sizeof
+      For array, return the size of entire array data.
+      For pointer, return size of only pointer.
+    
+  1.2 Memory layout
+    Static area
+      Text section
+        - Code
+        - Read-only data
+      Read-Write data -- Initialized Data Segment
+      BSS -- Uninitialized Data Segment
+    Dynamic area
+      Heap -- Malloc/New
+      Stack
+      
 2 Algorithm
+
 3 Data Structure
-4 Memory Map
+  Struct
+  Enum
+  Union
+  
