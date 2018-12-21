@@ -10,7 +10,16 @@
     c. Receiver send FIN to Initiator, receiver enter LAST_ACK status;
     d. Initiator replies ACK to receiver, initiator enter TIME_WAIT status and receiver enter CLOSED status, initiator enter CLOSED status after 2MSL;
   
-  1.3 Reliable transmission
+  1.3 Reliable transmission 可靠性传输
+    TCP uses a sequence number to identify each byte of data.
     
+  1.4 Retransmission
+    - Dupack-based retransmission 快速重传
+      Recevier send ACK to sender with same packet number 3 times if one of pakcet lost.
+    - Timeout-based retransmission 超时重传
+      Sender waits a timeout and transmits that packet again if don't receive ACK.
+      
   1.4 Flow control
+    TCP uses a sliding window flow control protocol, the receiver 
+    
   1.5 Congestion control
