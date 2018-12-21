@@ -46,9 +46,10 @@
     Compile
       1. Syntax and semantics parsing
       2. Optimization
+      3. Generate assemly instruction from C/C++
       
     Assembly
-      Generate target machine language.
+      Generate target machine instruction from assembly instruction.
       
     Linking
       Link symbols from different files or libraries.
