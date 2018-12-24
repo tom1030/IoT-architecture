@@ -41,3 +41,12 @@
 2 UDP
 
 3 Socket
+  3.1 Server API
+    - bind -- TCP/UDP
+    - listen -- TCP
+    - accept -- TCP
+  3.2 Client API
+    - connect -- TCP
+  3.3 Common API
+    - recv/recvfrom
+    - send/sendto
