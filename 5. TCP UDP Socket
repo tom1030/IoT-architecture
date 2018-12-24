@@ -15,7 +15,7 @@
     
   1.4 Retransmission
     - Dupack-based retransmission
-      Recevier send ACK to sender with same packet number 3 times if one of pakcet lost.
+      Recevier send ACK to sender with same packet number 3 times if one of pakcet lost,the sender will retransmit the last unacknowledged packet.
     - Timeout-based retransmission
       Sender waits a timeout and transmits that packet again if don't receive ACK.
       
@@ -25,9 +25,19 @@
     
   1.5 Congestion control
     - Slow start
+      a. Set congestion window to cwnd = 1,and send 1 MSS packet;
+      b. cwnd++ when receive ACK each time and it will equal cwnd*2 after one RTT;
+      c. when cwnd >= ssthresh,the slow start threshold,then enter "Congestion avoidance";
     - Congestion avoidance
+      a. cwnd+1 each one RTT interval;
     - Fast retransmit
+      Same as "Dupack-based retransmission".
     - Fast recovery
+      a. If sender receive 3 duplicated ACK, cwnd = cwnd/2,ssthresh = cwnd;
+      b. New cwnd = ssthresh * 3MSS,sender retransmits the packet that indicated by the 3 duplicated ACK;
+      c. cwnd = cwnd + 1, if receive duplicated ack again;
+      d. cwnd = ssthresh, if receive new ack, and enter "Congestion avoidance".
+    
 2 UDP
 
 3 Socket
