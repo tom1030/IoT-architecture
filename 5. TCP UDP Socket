@@ -39,14 +39,23 @@
       d. cwnd = ssthresh, if receive new ack, and enter "Congestion avoidance".
     
 2 UDP
+  2.1 Unreliable
+    There is no concept of acknowledgment, retransmission, or timeout.
+  2.2 Not ordered
+  2.3 Lightweight
+    No tracking connections,8 bytes header.
+  2.4 Datagram
+    Transmit packets with definite boundaries. 
+  2.5 No congestion control
+  2.5 Broadcast/Multicast
 
 3 Socket
   3.1 Server API
-    - bind -- TCP/UDP
-    - listen -- TCP
-    - accept -- TCP
+    - bind -- TCP/UDP, bind socket to local IP address and port 
+    - listen -- TCP, binding IP and port enter listen state 
+    - accept -- TCP, enable to accept the connection request from client
   3.2 Client API
-    - connect -- TCP
+    - connect -- TCP, connect to server with IP address and port
   3.3 Common API
-    - recv/recvfrom
-    - send/sendto
+    - recv/recvfrom -- TCP/UDP, receive data
+    - send/sendto -- TCP/UDP, send data
