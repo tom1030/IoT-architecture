@@ -1,3 +1,32 @@
-1 Task Schedule
-2 Sync
-3 Communication
+1. FreeRTOS
+  1.1 Task
+    a. States
+      - Running
+        A task is actually executing.
+      - Ready
+        A task is able to execute but are not currently executing.
+      - Blocked
+        A task is currently waiting for either a temporal or external event.
+      - Suspended
+        A task cannot be selected to enter the Running state and do not have a time out, only can be resumed.
+    b. Priorities
+    
+  1.2 Inter-task Communication
+    a. Direct to task notifications
+      - Each RTOS task has a 32-bit notification value, can use as lightweight semaphore to unblock a task.
+    b. Steam & Message buffers
+      - Task to task or interrupt to task communication primitives, be optimised for single reader single writer scenarios.
+      - Data is passed by copy - the data is copied into the buffer by the sender and out of the buffer by the read.
+    c. Queues
+      - Queues are primary form of intertask communications, used as FIFO buffers with new data being sent to the back of the queue, 
+        although data can also be sent to the front.
+    d. Binary semaphore
+      - Binary semaphores are used for both mutual exclusion and synchronisation purposes.
+      - Binary semaphores do not include a priority inheritance mechanism, better choice for implementing synchronisation.
+    e. Counting semaphore
+      - Counting semaphores can be thought of as queues that have a length of more than one. 
+      - Tasks are not interested in the data that is stored in the queue—just the number of items in the queue.
+      - Typically are used for Counting events and resource management.
+    f. Mutexes
+      - Mutexes include a priority inheritance mechanism, the better choice for implementing simple mutual exclusion.
+    g. Recursive Mutexes
