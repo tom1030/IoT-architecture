@@ -44,6 +44,7 @@
       - Counting semaphores can be thought of as queues that have a length of more than one. 
       - Tasks are not interested in the data that is stored in the queue—just the number of items in the queue.
       - Typically are used for Counting events and resource management.
+      
   1.3 Resource Management
     a. Priority Inversion
       - A higher priority task being delayed by a lower priority task in this manner is called ‘priority inversion’.
@@ -70,5 +71,16 @@
       - Basic critical sections must be kept very short, otherwise they will adversely affect interrupt response times.
       - It is safe for critical sections to become nested, because the kernel keeps a count of the nesting depth.
       - Critical sections can also be created by suspending the scheduler, or 'locking' the scheduler.
-      
+  1.4 Interrupt Management
+    Tasks will only run when there are no ISRs running, so the lowest priority interrupt will interrupt the highest priority task, 
+    and there is no way for a task to pre-empt an ISR.
+    a. Deferred Interrupt Processing
+      - An interrupt service routine must record the cause of the interrupt, and clear the interrupt. Any other processing necessitated 
+        by the interrupt can often be performed in a task, allowing the interrupt service routine to exit as quickly as is practical.
+    b. Binary Semaphores Used for Synchronization
+      - xSemaphoreTake()/xSemaphoreGiveFromISR()
+    c. Centralized Deferred Interrupt Processing
+      - Deferring interrupt processing to the daemon task.The xTimerPendFunctionCall() and xTimerPendFunctionCallFromISR() API functions
+        use the same timer command queue to send an ‘execute function’ command to the daemon task. The function sent to the daemon task
+        is then executed in the context of the daemon task.
       
