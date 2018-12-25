@@ -39,9 +39,9 @@
       - If two tasks of different priority use the same mutex, then the FreeRTOS scheduling policy makes the order 
         in which the tasks will execute clear; the highest priority task that is able to run will be selected as the task 
         that enters the Running state.
-      - If two tasks of same priority use the same mutex, the task A waiting for a mutex that held by task B will not be 
-        pre-empted when task B 'gives' the mutex, instead, task B will remain in the Running state and task A If two tasks 
-        of different priority use the same mutex.
+      - If two tasks of same priority use the same mutex, the task A waiting for a mutex that held by task B will not pre-empt 
+        when task B 'gives' the mutex, instead, task B will remain in the Running state and task A will simply move from the 
+        Blocked state to the Ready state.
     d. Recursive Mutexes
       - A recursive mutex can be ‘taken’ more than once by the same task, and will be returned only after one call to ‘give’ the 
         recursive mutex has been executed for every preceding call to ‘take’ the recursive mutex.
