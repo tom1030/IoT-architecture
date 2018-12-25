@@ -27,6 +27,24 @@
       - Counting semaphores can be thought of as queues that have a length of more than one. 
       - Tasks are not interested in the data that is stored in the queue—just the number of items in the queue.
       - Typically are used for Counting events and resource management.
-    f. Mutexes
+  1.3 Resource Management
+    a. Priority Inversion
+      - A higher priority task being delayed by a lower priority task in this manner is called ‘priority inversion’.
+    b. Priority Inheritance
+      - Priority inheritance works by temporarily raising the priority of the mutex holder to the priority of 
+        the highest priority task that is attempting to obtain the same mutex.The low priority task that holds 
+        the mutex ‘inherits’ the priority of the task waiting for the mutex.
+    c. Mutexes
       - Mutexes include a priority inheritance mechanism, the better choice for implementing simple mutual exclusion.
-    g. Recursive Mutexes
+      - If two tasks of different priority use the same mutex, then the FreeRTOS scheduling policy makes the order 
+        in which the tasks will execute clear; the highest priority task that is able to run will be selected as the task 
+        that enters the Running state.
+      - If two tasks of same priority use the same mutex, the task A waiting for a mutex that held by task B will not be 
+        pre-empted when task B 'gives' the mutex, instead, task B will remain in the Running state and task A If two tasks 
+        of different priority use the same mutex.
+    d. Recursive Mutexes
+      - A recursive mutex can be ‘taken’ more than once by the same task, and will be returned only after one call to ‘give’ the 
+        recursive mutex has been executed for every preceding call to ‘take’ the recursive mutex.
+    e. Deadlock
+      - Deadlock occurs when two tasks cannot proceed because they are both waiting for a resource that is held by the other.
+      - Use a time out that is a little longer than the maximum time it is expected to have to wait for the mutex.
