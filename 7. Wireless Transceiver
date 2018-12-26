@@ -1,4 +1,17 @@
 1 Wi-Fi
-2 ZigBee
-3 BLE
-4 Cellular
+  1.1 Handshake
+    a. Probe
+      - Active
+        Station swith to an specific channel, send probe request to AP and wait the prove response from AP.
+      - Passive
+        Station swith to an specific channel, wait the beacon from AP.
+    b. Authentication
+      - Open
+        -- Station send authentication request to AP with "Auth Algorithem : 0 Open System";
+        -- AP reply to station authentication response with "status code : 0 successful".
+      - Shared-Key
+        -- Station send authentication request to AP with "Auth Algorithem : 1 Shared Key";
+        -- AP reply plain text challenge to station;
+        -- Station send cipher text challenge to AP;
+        -- AP send authentication response to station with "status code : 0 successful" if decipher the text challenge successfully.
+    c. Association
