@@ -1,5 +1,33 @@
 1 MQTT
   1.1 Handshake
+    - CONNECT/CONNACK
+      CONNECT is the first packet sent by client to server after establish the network connection.
+      CONNACK is the first packet sent by server in response to the CONNECT packet from clinet.
+    - PUBLISH/PUBACK/PUBREC/PUBREL/PUBCOMP
+      Clinet or server transport application messages with PUBLISH packet.
+      PUBACK packet is response to PUBLISH with QoS level 1.
+      PUBREC Packet is the response to a PUBLISH Packet with QoS 2.
+      PUBREL Packet is the response to a PUBREC Packet.
+      PUBCOMP Packet is the response to a PUBREL Packet.
+    - SUBSCRIBE/SUBACK
+      SUBSCRIBE Packet is sent from the Client to the Server to create one or more Subscriptions.
+      SUBACK Packet is sent by the Server to the Client to confirm receipt and processing of a SUBSCRIBE Packet.
+    - UNSUBSCRIBE/UNSUBACK
+      UNSUBSCRIBE Packet is sent by the Client to the Server, to unsubscribe from topics.
+      UNSUBACK Packet is sent by the Server to the Client to confirm receipt of an UNSUBSCRIBE Packet.
+    - PINGREQ/PINGRESP
+      PINGREQ Packet is sent from a Client to the Server, to Indicate to the Server that the Client is alive 
+      in the absence of any other Control Packets being sent from the Client to the Server.
+      PINGRESP Packet is sent by the Server to the Client in response to a PINGREQ Packet, to indicates that the Server is alive.
+    - DISCONNECT/
+      DISCONNECT Packet is the final Control Packet sent from the Client to the Server, to indicates that the Client is disconnecting cleanly.
   1.2 Data frame
+    - Fixed Header
+    - Variable Header
+    - Payload
+  1.3 QoS
+    - QoS 0 -- At most once delivery
+    - QoS 1 -- At least once delivery
+    - QoS 2 -- Exactly once delivery
 2 WebSocket
 3 CoAP
