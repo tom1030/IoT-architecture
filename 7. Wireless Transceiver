@@ -15,3 +15,6 @@
         -- Station send cipher text challenge to AP;
         -- AP send authentication response to station with "status code : 0 successful" if decipher the text challenge successfully.
     c. Association
+      - Station send association request to AP;
+      - AP reply association response to station.
+  
