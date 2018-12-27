@@ -71,5 +71,6 @@
   +---------------------------------------------------------------+
   
     - Masking from client to server
+      The masking key is a 32-bit value chosen at random by the client.
     
 3 CoAP
