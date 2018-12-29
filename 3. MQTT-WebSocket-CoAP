@@ -73,5 +73,4 @@
     - Masking from client to server
       The Masking-key is a 32-bit value chosen at random by the client. 
       Each 8-bit data at index i in the payload will XOR with the 8-bit key value in the Masking-Key at the index j = i % 4.
-    
-3 CoAP
+  
