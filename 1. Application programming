@@ -58,7 +58,35 @@
       -- Dynamic linking
   
 2 Algorithm
-
+  2.1 Searching
+    - BST
+      a. If the tree is empty,then return fail,otherwise;
+      b. If the target value equals the value of root node,then return success,otherwise;
+      c. If the target is less than the value of root node,then search the left child tree,otherwise;
+      d. Search the right child tree.
+    - Binary
+    - Fibonacci
+    - Insertion
+    - Sequential
+    
+  2.2 Sorting
+    - Bubble
+      a. Compare the neighbour value, if the first one is larger than the second one, then swap them;
+      b. Compare all the neighbour from first pair to last pair, then the last value will be biggest;
+    - Bucket
+      a. Set up an array of initially empty "buckets".
+      b. Scatter: Go over the original array, putting each object in its bucket.
+      c. Sort each non-empty bucket.
+      d. Gather: Visit the buckets in order and put all elements back into the original array.
+    - Counting
+    - Heap
+    - Insert
+    - Merge
+    - Quick
+    - Radix
+    - Selection
+    - Shell
+    
 3 Data Structure
   3.1 Struct
   3.2 Enum
