@@ -98,5 +98,5 @@
     - Heap_4
       Coalescences adjacent free blocks to avoid fragmentation. Includes absolute address placement option.
     - Heap_5
-      Coalescences adjacent free blocks to avoid fragmentation. Includes absolute address placement option.
+      As per heap_4, with the ability to span the heap across multiple non-adjacent memory areas.
       
