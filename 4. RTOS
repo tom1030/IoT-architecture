@@ -88,4 +88,10 @@
       - Deferring interrupt processing to the daemon task.The xTimerPendFunctionCall() and xTimerPendFunctionCallFromISR() API functions
         use the same timer command queue to send an ‘execute function’ command to the daemon task. The function sent to the daemon task
         is then executed in the context of the daemon task.
+  1.5 Memory Management
+    - Heap_1
+    - Heap_2
+    - Heap_3
+    - Heap_4
+    - Heap_5
       
