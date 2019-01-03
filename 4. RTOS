@@ -90,8 +90,13 @@
         is then executed in the context of the daemon task.
   1.5 Memory Management
     - Heap_1
+      The very simplest, does not permit memory to be freed.
     - Heap_2
+      Permits memory to be freed, but does not coalescence adjacent free blocks.
     - Heap_3
+      Simply wraps the standard malloc() and free() for thread safety.
     - Heap_4
+      Coalescences adjacent free blocks to avoid fragmentation. Includes absolute address placement option.
     - Heap_5
+      Coalescences adjacent free blocks to avoid fragmentation. Includes absolute address placement option.
       
