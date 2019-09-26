@@ -73,6 +73,24 @@
     - Bubble
       a. Compare the neighbour value, if the first one is larger than the second one, then swap them;
       b. Compare all the neighbour from first pair to last pair, then the last value will be biggest;
+      --------------------------------------------------------
+      int nArray[], int nLength;
+      for(int i = 0;i < nLength;i++){
+          int j = i;
+          int temp;
+          
+          while((i > 0)&&(j > 0)&&(nArray[j] < nArray[j-1])){
+              temp = nArray[j-1];
+              nArray[j-1] = nArray[j]; 
+              nArray[j] = temp;
+              j--;
+          }
+      }
+      for(int i = 0;i < nLength;i++){
+          printf("%d ",nArray[i]);
+      }
+      printf("\r\n");
+      ---------------------------------------------------
     - Bucket
       a. Set up an array of initially empty "buckets".
       b. Scatter: Go over the original array, putting each object in its bucket.
