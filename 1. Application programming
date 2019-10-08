@@ -105,51 +105,54 @@
     - Selection
     - Shell
   2.2 Power Set
-    - Bit map
     -----------------------------------------------------
-    int mark = 0;
-    int i = 0;
-    int nStart = 0;
-	  int nEnd = (1 << nLength) -1;
-	  bool bNullSet = false,bDup = false;
+    void GetPowerSet(int nArray[], int nLength)
+    {
+	int mark = 0;
+	int i = 0;
+	int nStart = 0;
+	int nEnd = (1 << nLength) -1;
+	bool bNullSet = false,bDup = false;
 
-	  //sort
-	  for(int i = 0;i < nLength;i++){
-		  int j = i;
-		  int temp;
-	
-		  while((i > 0)&&(j > 0)&&(nArray[j] < nArray[j-1])){
-			  temp = nArray[j-1];
-			  nArray[j-1] = nArray[j]; 
-			  nArray[j] = temp;
-			  j--;
-		  }
+	//sort
+	for(i = 0;i < nLength;i++){
+		int j = i;
+		int temp;
+
+	    //compare with all previous items
+		while((i > 0)&&(j > 0)&&(nArray[j] < nArray[j-1])){
+			temp = nArray[j-1];
+			nArray[j-1] = nArray[j]; 
+			nArray[j] = temp;
+			j--;
+		}
 		
-	  }
-	  for(int i = 0;i < nLength;i++){
-		  printf("%d ",nArray[i]);
-	  }
-	  printf("\r\n");
+	}
+	for(i = 0;i < nLength;i++){
+		printf("%d ",nArray[i]);
+	}
+	printf("\r\n");
 	
-	  //print
-	  for (mark = nStart; mark <= nEnd; mark++)
-	  {
-		  bNullSet = true;
-		  bDup = false;
-		  printf("%d:",mark);
-		  for (i = 0; i < nLength; i++){
-			  if (((1<<i)&mark) != 0) //item check
-			  {
-				  if((i > 0)&&(nArray[i] == nArray[i-1])
-					  &&(((1<<(i-1))&mark) == 0)){
-					  bDup = true;
-				  }
-			  }
-		  }
-		  if(!bDup){
-			  for (i = 0; i < nLength; i++){
-				  if (((1<<i)&mark) != 0) //item print
-				  {
+	//print
+	for (mark = nStart; mark <= nEnd; mark++)
+	{
+		bNullSet = true;
+		bDup = false;
+		printf("%d:",mark);
+		for (i = 0; i < nLength; i++){
+			if (((1<<i)&mark) != 0) //item check
+			{
+				//only print duplicate item when print previous same item
+				if((i > 0)&&(nArray[i] == nArray[i-1])
+					&&(((1<<(i-1))&mark) == 0)){
+					bDup = true;
+				}
+			}
+		}
+		if(!bDup){
+			for (i = 0; i < nLength; i++){
+				if (((1<<i)&mark) != 0) //item print
+				{
 				    bNullSet = false;
 				    printf("%d ", nArray[i]);
 			    }
@@ -158,10 +161,11 @@
 		    {
 			    printf("null ");
 		    }
-		  }
-		  printf("\n");
+		}
+		printf("\n");
 		
-	  }
+	}
+    }
     -----------------------------------------------------
     
 3 Data Structure
